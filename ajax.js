@@ -88,7 +88,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   })
 
-  // Time Button 
+  // Time Button
+
+  timebtn.addEventListener('click', function() {
+    $.ajax({
+      url: 'http://first-ajax-api.herokuapp.com/time',
+      method: 'GET',
+      data: {timezone: 'America/Mexico_City'},
+      dataType: 'text',
+    }).done(function(responseData) {
+      console.log(responseData)
+      step8.append(responseData)
+    });
+  })
+
 
 
 });
