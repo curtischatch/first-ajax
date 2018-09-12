@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
     $.ajax({
       url: 'http://first-ajax-api.herokuapp.com/time',
       method: 'GET',
-      data: {timezone: 'America/Mexico_City'},
+      data: {timezone: 'Asia/Kolkata'},
       dataType: 'text',
     }).done(function(responseData) {
       console.log(responseData)
