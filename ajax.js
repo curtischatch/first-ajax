@@ -16,15 +16,28 @@ document.addEventListener("DOMContentLoaded", function() {
     })
   })
 
+  // pingPongbtn.addEventListener('click', function() {
+  //   console.log("here")
+  //   $.ajax({
+  //     url: 'http://first-ajax-api.herokuapp.com/ping',
+  //     method: 'GET',
+  //     dataType: 'text',
+  //   }).done(function (responseData) {
+  //     console.log(responseData);
+  //     step3456.append(responseData);
+  //     console.log('request successful');
+  //   })
+  // })
+
   pingPongbtn.addEventListener('click', function() {
     console.log("here")
     $.ajax({
-      url: 'http://first-ajax-api.herokuapp.com/ping',
+      url: 'http://first-ajax-api.herokuapp.com/pong',
       method: 'GET',
       dataType: 'text',
-    }).done(function (responseData) {
+    }).fail(function (responseData) {
       console.log(responseData);
-      step3456.append(responseData);
+      step3456.append("Requst failed, I will try harder next time");
     })
   })
 
