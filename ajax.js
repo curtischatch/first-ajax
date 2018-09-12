@@ -4,12 +4,10 @@ document.addEventListener("DOMContentLoaded", function() {
   /* Your code goes here */
 
   var requestbtn= document.querySelector('#step12 button')
-
   var pingPongbtn= document.querySelector('#step3456 button')
-
   var countbtn = document.querySelector('#step7 button')
-
   var timebtn = document.querySelector('#step8 button')
+  var carbtn = document.querySelector('#step9 button')
 
   requestbtn.addEventListener('click', function() {
     $.ajax({
@@ -101,6 +99,21 @@ document.addEventListener("DOMContentLoaded", function() {
       step8.append(responseData)
     });
   })
+
+  // HTML Car Request
+
+  carbtn.addEventListener('click', function() {
+    $.ajax({
+      url: 'http://first-ajax-api.herokuapp.com/a_car',
+      method: 'GET',
+      data: {},
+      dataType: 'html',
+    }).done(function(responseData) {
+      $("#cars").append(responseData)
+    });
+  })
+
+
 
 
 
