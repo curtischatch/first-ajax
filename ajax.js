@@ -40,17 +40,33 @@ document.addEventListener("DOMContentLoaded", function() {
   //   })
   // })
 
+  // pingPongbtn.addEventListener('click', function() {
+  //   $.ajax({
+  //     url: 'http://first-ajax-api.herokuapp.com/ping',
+  //     method: 'GET',
+  //     dataType: 'text',
+  //   }).always(function () {
+  //     console.log('always alalala');
+  //     step3456.append("Hey the request fini");
+  //   })
+  // })
+
   pingPongbtn.addEventListener('click', function() {
+    // console.log("here") //debug
     $.ajax({
       url: 'http://first-ajax-api.herokuapp.com/ping',
       method: 'GET',
       dataType: 'text',
-    }).always(function () {
-      console.log('always alalala');
-      step3456.append("Hey the request finished");
-
-
-    })
+    }).done(function (responseData) {
+      console.log(responseData);
+      step3456.append("Yay we did it!")
+    }).fail(function () {
+      console.log('lalala fail fail')
+      step3456.append("That did not go well.")
+    }).always(function() {
+      console.log('function is running always')
+      step3456.append("All I know is, it's over.")
+    });
   })
 
 
