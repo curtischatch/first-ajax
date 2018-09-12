@@ -14,3 +14,7 @@ Step 1
 5. Status: 200
 6. Chrome: count status: 200 type: xhr, Initiator: jquery.min.js4
 jquery.min.js status: 200 type: script Initiator: index.html
+
+Step 2
+Step 3
+======
