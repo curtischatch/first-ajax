@@ -5,7 +5,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var requestbtn= document.querySelector('#step12 button')
 
-  var  pingPongbtn = document.querySelector('#step3456 button')
+  var pingPongbtn= document.querySelector('#step3456 button')
+
+  var countbtn = document.querySelector('#step7 button')
+
+  var timebtn = document.querySelector('#step8 button')
 
   requestbtn.addEventListener('click', function() {
     $.ajax({
@@ -51,6 +55,8 @@ document.addEventListener("DOMContentLoaded", function() {
   //   })
   // })
 
+  // Root and Pong Button
+
   pingPongbtn.addEventListener('click', function() {
     // console.log("here") //debug
     $.ajax({
@@ -69,7 +75,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   })
 
+  // Random Count Button
 
+  countbtn.addEventListener('click', function() {
+    $.ajax({
+      url: 'http://first-ajax-api.herokuapp.com/count',
+      method: 'GET',
+      dataType: 'text',
+    }).done(function(responseData) {
+      console.log(responseData)
+      step7.append(responseData)
+    });
+  })
+
+  // Time Button 
 
 
 });
